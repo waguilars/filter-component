@@ -3,6 +3,7 @@ package com.montran.filter.data;
 import java.util.ResourceBundle;
 
 /**
+ * Creator class of Filters based on a configuration file.
  * @author Wilson Aguilar
  */
 public class DefaultFilter extends FilterFactory {
@@ -11,6 +12,22 @@ public class DefaultFilter extends FilterFactory {
         super(resources);
     }
 
+    /**
+     * Create a dynamic filter based in the <pre>config.properties</pre> file
+     * To configure a filter you can set these properties in the configuration file:
+     * filter.type=i
+     * filter.settings=text
+     * Available types are: i -> InclusionFilter, e -> ExclusionFilter, o -> OutputFilter
+     * Settings for the same types are: i -> text, e -> text, o -> text:replacement
+     *
+     * If you need to create a CompositeFilter, you need append more types and settings splitted by a (,)
+     *
+     * filter.type=i,o,e
+     * filter.settings=world ,w:x,l
+     *
+     * @return filter based on the configuration.
+     * @throws Exception is thrown when the format is wrong or when you are sending a not valid filter
+     */
     @Override
     public BaseFilter create() throws Exception {
 
