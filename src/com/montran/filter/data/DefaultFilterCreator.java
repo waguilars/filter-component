@@ -6,9 +6,9 @@ import java.util.ResourceBundle;
  * Creator class of Filters based on a configuration file.
  * @author Wilson Aguilar
  */
-public class DefaultFilter extends FilterFactory {
+public class DefaultFilterCreator extends FilterFactory {
 
-    public DefaultFilter(ResourceBundle resources) {
+    public DefaultFilterCreator(ResourceBundle resources) {
         super(resources);
     }
 

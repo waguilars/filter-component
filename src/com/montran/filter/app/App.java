@@ -24,7 +24,7 @@ public class App {
 
         ResourceBundle resources = ResourceBundle.getBundle("com.montran.filter.settings.config");
 
-        DefaultFilter systemFilter = new DefaultFilter(resources);
+        DefaultFilterCreator systemFilter = new DefaultFilterCreator(resources);
         try {
             BaseFilter filter = systemFilter.create();
             System.out.println(filter.filter(text));
