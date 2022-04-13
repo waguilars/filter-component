@@ -1,6 +1,7 @@
 package com.montran.filter.models;
 
 /**
+ * Filter that only includes a pattern from the text
  * @author Wilson Aguilar
  */
 public class InclusionFilter extends BaseFilter {
@@ -9,6 +10,11 @@ public class InclusionFilter extends BaseFilter {
         super(pattern);
     }
 
+    /**
+     * Filter the text including the given pattern
+     * @param text - text to be filtered
+     * @return filtered text
+     */
     @Override
     public String filter(String text) {
         StringBuilder result = new StringBuilder();

@@ -1,6 +1,7 @@
 package com.montran.filter.models;
 
 /**
+ * Filter that allow to exclude a word from a given text
  * @author Wilson Aguilar
  */
 public class ExclusionFilter extends BaseFilter {
@@ -9,6 +10,11 @@ public class ExclusionFilter extends BaseFilter {
         super(pattern);
     }
 
+    /**
+     * Filter the text excluding the given pattern from the text
+     * @param text - text to be filtered
+     * @return filtered text
+     */
     @Override
     public String filter(String text) {
         return text.replaceAll(this.pattern, "");
