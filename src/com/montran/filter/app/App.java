@@ -1,9 +1,8 @@
 package com.montran.filter.app;
 
-import com.montran.filter.models.CompositeFilter;
-import com.montran.filter.models.ExclusionFilter;
-import com.montran.filter.models.InclusionFilter;
-import com.montran.filter.models.OutputFilter;
+import com.montran.filter.data.*;
+
+import java.util.ResourceBundle;
 
 /**
  * @author Wilson Aguilar
@@ -15,13 +14,23 @@ public class App {
                 "world some thing nothing almost worldworld\n" +
                 "inside the house in the world.\n";
 
-        CompositeFilter filter = new CompositeFilter();
+//        CompositeFilter filter = new CompositeFilter();
+//
+//        filter.apply(new InclusionFilter("world "))
+//                .apply(new OutputFilter("w", "x"))
+//                .apply(new ExclusionFilter("l"));
+//
+//        System.out.println(filter.filter(text));
 
-        filter.apply(new InclusionFilter("world "))
-                .apply(new OutputFilter("w", "x"))
-                .apply(new ExclusionFilter("l"));
+        ResourceBundle resources = ResourceBundle.getBundle("com.montran.filter.settings.config");
 
-        System.out.println(filter.filter(text));
+        DefaultFilter systemFilter = new DefaultFilter(resources);
+        try {
+            BaseFilter filter = systemFilter.create();
+            System.out.println(filter.filter(text));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

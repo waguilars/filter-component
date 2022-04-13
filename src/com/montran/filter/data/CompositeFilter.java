@@ -1,4 +1,4 @@
-package com.montran.filter.models;
+package com.montran.filter.data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
  * @author Wilson Aguilar
  */
 public class CompositeFilter extends BaseFilter {
-    List<FilterOperation> filters;
+    List<BaseFilter> filters;
 
     public CompositeFilter() {
         super(null);
@@ -21,7 +21,7 @@ public class CompositeFilter extends BaseFilter {
      * @param filter - An implementation of FilterOperation
      * @return CompositeFilter with the new filter added
      */
-    public CompositeFilter apply(FilterOperation filter) {
+    public CompositeFilter apply(BaseFilter filter) {
         this.filters.add(filter);
         return this;
     }
@@ -33,7 +33,7 @@ public class CompositeFilter extends BaseFilter {
      */
     @Override
     public String filter(String text) {
-        for (FilterOperation f : this.filters) {
+        for (BaseFilter f : this.filters) {
             text = f.filter(text);
         }
         return text;

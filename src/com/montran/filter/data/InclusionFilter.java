@@ -1,4 +1,4 @@
-package com.montran.filter.models;
+package com.montran.filter.data;
 
 /**
  * Filter that only includes a pattern from the text

@@ -1,4 +1,4 @@
-package com.montran.filter.models;
+package com.montran.filter.data;
 
 /**
  * Base class that describes a basic filter object

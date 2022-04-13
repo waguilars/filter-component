@@ -1,4 +1,4 @@
-package com.montran.filter.models;
+package com.montran.filter.data;
 
 /**
  * Filter that allow to exclude a word from a given text

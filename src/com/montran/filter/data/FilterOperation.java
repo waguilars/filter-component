@@ -1,4 +1,4 @@
-package com.montran.filter.models;
+package com.montran.filter.data;
 
 /**
  * Define the basic operation of a filter.

@@ -1,4 +1,4 @@
-package com.montran.filter.models;
+package com.montran.filter.data;
 
 /**
  * Class that allow to create an OutputFilter
